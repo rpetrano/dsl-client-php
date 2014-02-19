@@ -66,6 +66,17 @@ class RestHttp
      */
     protected static $instance;
 
+    public function copyConstructor(RestHttp $x)
+    {
+        $this->subscribers = $x->subscribers;
+        $this->service = $x->service;
+        $this->username = $x->username;
+        $this->namespacePrefix = $x->namespacePrefix;
+        $this->auth = $x->auth;
+        $this->certPath = $x->certPath;
+        $this->lastResponse = $x->lastResponse;
+    }
+
     /**
      * Creates new client instance
      *
